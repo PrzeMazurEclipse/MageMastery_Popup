@@ -90,8 +90,8 @@ class Popup extends AbstractModel implements PopupInterface
         return (bool) $this->getData(self::IS_ACTIVE);
     }
 
-    public function setIsActive(bool $isActive)
+    public function setIsActive(int $status)
     {
-        $this->setData(self::IS_ACTIVE, $isActive);
+        $this->setData(self::IS_ACTIVE, $status);
     }
 }
