@@ -12,8 +12,8 @@ use Magento\Ui\Component\Listing\Columns\Column;
 
 class PopupActions extends Column
 {
-    private const URL_PATH_EDIT = 'popup/index/edit';
-    private const URL_PATH_DELETE = 'popup/index/delete';
+    private const URL_PATH_EDIT = 'magemastery_popup/popup/edit';
+    private const URL_PATH_DELETE = 'magemastery_popup/popup/delete';
 
     /**
      * @var \Magento\Framework\UrlInterface
