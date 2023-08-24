@@ -12,6 +12,11 @@ interface PopupRepositoryInterface
      * @param PopupInterface $popup
      * @return void
      */
+    public function delete(PopupInterface $popup): void;
+    /**
+     * @param PopupInterface $popup
+     * @return void
+     */
     public function save(PopupInterface $popup): void;
 
     /**
