@@ -91,7 +91,7 @@
         <settings>
             <editorConfig>
                 <param name="clientConfig" xsi:type="array">
-                    <item name="saveUrl" xsi:type="url" path="magemastery_popup/inlineEdit"/>
+                    <item name="saveUrl" xsi:type="url" path="magemastery_popup/popup/inlineSave"/>
                     <item name="validateBeforeSave" xsi:type="boolean">false</item>
                 </param>
                 <param name="indexField" xsi:type="string">popup_id</param>
