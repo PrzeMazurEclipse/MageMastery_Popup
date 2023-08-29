@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace MageMastery\Popup\Api;
 
 use MageMastery\Popup\Api\Data\PopupInterface;
+use Magento\Framework\Exception\NoSuchEntityException;
 
 interface PopupRepositoryInterface
 {
@@ -22,6 +23,7 @@ interface PopupRepositoryInterface
     /**
      * @param int $popupId
      * @return PopupInterface
+     * @throws NoSuchEntityException
      */
     public function getById(int $popupId): PopupInterface;
 }
