@@ -10,7 +10,7 @@
     <settings>
         <buttons>
             <button name="save" class="MageMastery\Popup\Block\Adminhtml\Popup\Edit\SaveButton"/>
-            <button name="delete" class="Magento\Cms\Block\Adminhtml\Block\Edit\DeleteButton"/>
+            <button name="delete" class="MageMastery\Popup\Block\Adminhtml\Popup\Edit\DeleteButton"/>
             <button name="back" class="MageMastery\Popup\Block\Adminhtml\Popup\Edit\BackButton"/>
         </buttons>
         <namespace>magemastery_popup_form</namespace>
