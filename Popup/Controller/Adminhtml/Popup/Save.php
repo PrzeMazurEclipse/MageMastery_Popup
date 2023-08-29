@@ -68,7 +68,7 @@ class Save extends Action implements HttpPostActionInterface
             try {
                 $this->popupRepository->save($model);
                 $this->messageManager->addSuccessMessage(__('You saved the popup.'));
-                $this->dataPersistor->clear('magemastery_popup');
+                $this->dataPersistor->clear('magemastery_popup_popup');
                 return $resultRedirect->setPath('*/*/');
             } catch (LocalizedException $e) {
                 $this->messageManager->addErrorMessage($e->getMessage());
@@ -76,7 +76,7 @@ class Save extends Action implements HttpPostActionInterface
                 $this->messageManager->addExceptionMessage($e, __('Something went wrong while saving the popup.'));
             }
 
-            $this->dataPersistor->set('magemastery_popup', $data);
+            $this->dataPersistor->set('magemastery_popup_popup', $data);
             return $resultRedirect->setPath('*/*/edit', ['popup_id' => $id]);
         }
         return $resultRedirect->setPath('*/*/');

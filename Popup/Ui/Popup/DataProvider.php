@@ -57,7 +57,7 @@ class DataProvider extends ModifierPoolDataProvider
      */
     public function getData(): array
     {
-        if (isset($this->loadedData)) {
+        if (!empty($this->loadedData)) {
             return $this->loadedData;
         }
         $items = $this->collection->getItems();
@@ -66,10 +66,12 @@ class DataProvider extends ModifierPoolDataProvider
             $this->loadedData[$popup->getId()] = $popup->getData();
         }
 
+        $data = $this->dataPersistor->get('magemastery_popup_popup');
         if (!empty($data)) {
             $popup = $this->collection->getNewEmptyItem();
             $popup->setData($data);
             $this->loadedData[$popup->getId()] = $popup->getData();
+            $this->dataPersistor->clear('magmastery_popup_popup');
         }
 
         return $this->loadedData;
