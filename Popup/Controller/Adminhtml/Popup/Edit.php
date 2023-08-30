@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace MageMastery\Popup\Controller\Adminhtml\Popup;
 
+use MageMastery\Popup\Api\Data\PopupInterface;
+use MageMastery\Popup\Api\Data\PopupInterfaceFactory;
 use MageMastery\Popup\Api\PopupRepositoryInterface;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -18,7 +20,8 @@ class Edit extends Action
     public function __construct(
         Context $context,
         private readonly PopupRepositoryInterface $popupRepository,
-        private readonly DataPersistorInterface $dataPersistor
+        private readonly DataPersistorInterface $dataPersistor,
+        private readonly PopupInterfaceFactory $popupFactory
     )
     {
         parent::__construct($context);
@@ -30,11 +33,16 @@ class Edit extends Action
         $page = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
 
         $popupId = (int) $this->getRequest()->getParam('popup_id');
-        try{
-            $popup = $this->popupRepository->getById($popupId);
-            $this->dataPersistor->set('magemastery_popup_popup', $popup->getData());
-        } catch (NoSuchEntityException $exception) {
-            $this->messageManager->addErrorMessage(__('The popup with id %1 does not exists', $popupId));
+
+        if($popupId) {
+            try {
+                $popup = $this->popupRepository->getById($popupId);
+                $this->dataPersistor->set('magemastery_popup_popup', $popup->getData());
+            } catch (NoSuchEntityException $exception) {
+                $this->messageManager->addErrorMessage(__('The popup with id %1 does not exists', $popupId));
+            }
+        } else {
+            $popup = $this->popupFactory->create();
         }
 
 
