@@ -16,6 +16,7 @@ use Magento\Ui\Component\MassAction\Filter;
 
 class MassDelete extends Action
 {
+    const ADMIN_RESOURCE = 'MageMastery_Popup::popup';
     /**
      * @param Context $context
      * @param Filter $filter

@@ -13,6 +13,7 @@ use Magento\Framework\Controller\ResultInterface;
 
 class InlineSave extends Action
 {
+    const ADMIN_RESOURCE = 'MageMastery_Popup::popup';
     /**
      * @param Context $context
      * @param PopupRepositoryInterface $popupRepository

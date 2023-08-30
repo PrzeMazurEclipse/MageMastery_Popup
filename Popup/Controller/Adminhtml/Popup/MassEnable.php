@@ -16,6 +16,7 @@ use Magento\Ui\Component\MassAction\Filter;
 
 class MassEnable extends Action
 {
+    const ADMIN_RESOURCE = 'MageMastery_Popup::popup';
     public function __construct(
         Context $context,
         private readonly Filter $filter,

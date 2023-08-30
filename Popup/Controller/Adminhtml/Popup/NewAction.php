@@ -10,6 +10,7 @@ use Magento\Framework\Controller\ResultInterface;
 
 class NewAction extends Action
 {
+    const ADMIN_RESOURCE = 'MageMastery_Popup::popup';
     public function execute(): ResultInterface
     {
         return $this->resultFactory->create(ResultFactory::TYPE_FORWARD)->forward('edit');

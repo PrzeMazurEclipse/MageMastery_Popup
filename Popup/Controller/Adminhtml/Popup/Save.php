@@ -20,6 +20,7 @@ use Magento\Framework\Exception\LocalizedException;
  */
 class Save extends Action implements HttpPostActionInterface
 {
+    const ADMIN_RESOURCE = 'MageMastery_Popup::popup';
     /**
      * @param Context $context
      * @param DataPersistorInterface $dataPersistor

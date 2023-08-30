@@ -12,6 +12,7 @@ use Magento\Framework\Controller\ResultInterface;
 
 class Delete extends Action
 {
+    const ADMIN_RESOURCE = 'MageMastery_Popup::popup';
     /**
      * @param Context $context
      * @param PopupRepositoryInterface $popupRepository

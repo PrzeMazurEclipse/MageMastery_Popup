@@ -11,6 +11,7 @@ use Magento\Framework\View\Result\Page;
 
 class Index extends Action
 {
+    const ADMIN_RESOURCE = 'MageMastery_Popup::popup';
     public function execute(): ResultInterface
     {
         /** @var Page $page */

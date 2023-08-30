@@ -17,6 +17,7 @@ use Magento\Framework\View\Result\Page;
 
 class Edit extends Action
 {
+    const ADMIN_RESOURCE = 'MageMastery_Popup::popup';
     public function __construct(
         Context $context,
         private readonly PopupRepositoryInterface $popupRepository,
