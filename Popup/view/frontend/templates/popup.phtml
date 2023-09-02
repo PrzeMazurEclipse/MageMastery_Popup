@@ -10,4 +10,16 @@ $viewModel = $block->getData('view_model');
 
 $popup = $viewModel->getActivePopup();
 ?>
-<h1><?= $popup->getName(); ?></h1>
+
+<button type="button" class="action" data-trigger="trigger">
+
+    <span data-bind="i18n: 'Click Here'"></span>
+
+</button>
+
+<div data-bind="mageInit: {
+        'MageMastery_Popup/js/popup':{
+            'timeout': <?= /* @noEscape */$popup->getTimeout(); ?>,
+            'content': '<?= $popup->getContent(); ?>',
+        }}">
+</div>
