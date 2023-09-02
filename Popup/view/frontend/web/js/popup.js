@@ -13,6 +13,8 @@ define([
             autoOpen: true,
         };
 
-        $('<div />').html(content).modal(options);
+        setTimeout( function() {
+            $('<div />').html(content).modal(options);
+        }, timeout * 1000);
     }
 })
