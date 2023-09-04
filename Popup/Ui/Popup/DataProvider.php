@@ -28,9 +28,9 @@ class DataProvider extends ModifierPoolDataProvider
     private array $loadedData = [];
 
     /**
-     * @param $name
-     * @param $primaryFieldName
-     * @param $requestFieldName
+     * @param string $name
+     * @param string $primaryFieldName
+     * @param string $requestFieldName
      * @param CollectionFactory $blockCollectionFactory
      * @param DataPersistorInterface $dataPersistor
      * @param array $meta
@@ -38,9 +38,9 @@ class DataProvider extends ModifierPoolDataProvider
      * @param PoolInterface|null $pool
      */
     public function __construct(
-        $name,
-        $primaryFieldName,
-        $requestFieldName,
+        string $name,
+        string $primaryFieldName,
+        string $requestFieldName,
         CollectionFactory $blockCollectionFactory,
         DataPersistorInterface $dataPersistor,
         array $meta = [],
